@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
+            <connections>
+                <outlet property="bird" destination="h3L-O8-I8w" id="hFS-aD-8gY"/>
+                <outlet property="bottom1" destination="NCg-AT-h1x" id="H22-5c-Q2B"/>
+                <outlet property="bottom2" destination="dUI-gv-9SM" id="44u-o6-aeN"/>
+                <outlet property="bottom3" destination="s6T-FA-iN9" id="Wdt-oi-JP9"/>
+                <outlet property="bottomView" destination="S0c-h1-eN6" id="RI3-26-cXg"/>
+                <outlet property="btnPlay" destination="oZe-1M-eMr" id="bCD-l6-iCd"/>
+                <outlet property="top1" destination="ND7-uU-hpp" id="y4k-o3-QxU"/>
+                <outlet property="top2" destination="6OZ-Pa-0el" id="Hwt-Zh-5hi"/>
+                <outlet property="top3" destination="2ZJ-6o-o2U" id="w4k-tl-ehQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="bg" id="ZDy-DL-4zP">
+                    <rect key="frame" x="0.0" y="0.0" width="339" height="568"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oZe-1M-eMr" userLabel="btnPlay">
+                    <rect key="frame" x="135" y="259" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="play">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnPlayPressed:" destination="-1" eventType="touchUpInside" id="OeQ-XE-i2G"/>
+                    </connections>
+                </button>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="bird" id="h3L-O8-I8w" userLabel="bird">
+                    <rect key="frame" x="32" y="280" width="50" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pipe" id="NCg-AT-h1x" userLabel="bottom1">
+                    <rect key="frame" x="0.0" y="338" width="60" height="450"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pipe" id="dUI-gv-9SM" userLabel="bottom2">
+                    <rect key="frame" x="130" y="365" width="60" height="450"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pipe" id="s6T-FA-iN9" userLabel="bottom3">
+                    <rect key="frame" x="260" y="365" width="60" height="450"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pipe" id="ND7-uU-hpp" userLabel="top1">
+                    <rect key="frame" x="0.0" y="-219" width="60" height="450"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pipe" id="6OZ-Pa-0el" userLabel="top2">
+                    <rect key="frame" x="130" y="-250" width="60" height="450"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pipe" id="2ZJ-6o-o2U" userLabel="top3">
+                    <rect key="frame" x="260" y="-250" width="60" height="450"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="bottom" id="S0c-h1-eN6">
+                    <rect key="frame" x="-1" y="518" width="339" height="54"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg" width="339" height="590"/>
+        <image name="bird" width="1015" height="734"/>
+        <image name="bottom" width="339" height="54"/>
+        <image name="pipe" width="60" height="450"/>
+        <image name="play" width="256" height="256"/>
+    </resources>
+</document>
