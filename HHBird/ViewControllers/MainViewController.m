@@ -218,7 +218,7 @@
         DLog(@"game over");
         [self stopTimer];
         [self removeTapGesture];
-        [self viewDidLoad];
+        [self performSelector:@selector(viewDidLoad) withObject:nil afterDelay:1.0];
     }
     
     //When bird hit top
@@ -226,49 +226,49 @@
         DLog(@"game over");
         [self stopTimer];
         [self removeTapGesture];
-        [self viewDidLoad];
+        [self performSelector:@selector(viewDidLoad) withObject:nil afterDelay:1.0];
     }
     
     if (CGRectIntersectsRect(_top1.frame, _bird.frame)) {
         DLog(@"bird_top1");
         [self stopTimer];
         [self removeTapGesture];
-        [self viewDidLoad];
+        [self performSelector:@selector(viewDidLoad) withObject:nil afterDelay:1.0];
     }
     
     if (CGRectIntersectsRect(_top2.frame,  _bird.frame)) {
         DLog(@"bird_top2");
         [self stopTimer];
         [self removeTapGesture];
-        [self viewDidLoad];
+         [self performSelector:@selector(viewDidLoad) withObject:nil afterDelay:1.0];
     }
     
     if (CGRectIntersectsRect(_top3.frame,  _bird.frame)) {
         DLog(@"bird_top3");
         [self stopTimer];
         [self removeTapGesture];
-        [self viewDidLoad];
+        [self performSelector:@selector(viewDidLoad) withObject:nil afterDelay:1.0];
     }
     
     if (CGRectIntersectsRect(_bottom1.frame,  _bird.frame)) {
         DLog(@"bird_bottom1");
         [self stopTimer];
         [self removeTapGesture];
-        [self viewDidLoad];
+        [self performSelector:@selector(viewDidLoad) withObject:nil afterDelay:1.0];
     }
     
     if (CGRectIntersectsRect(_bottom2.frame,  _bird.frame)) {
         DLog(@"bird_bottom2");
         [self stopTimer];
         [self removeTapGesture];
-        [self viewDidLoad];
+        [self performSelector:@selector(viewDidLoad) withObject:nil afterDelay:1.0];
     }
     
     if (CGRectIntersectsRect(_bottom3.frame,  _bird.frame)) {
         DLog(@"bird_bottom3");
         [self stopTimer];
         [self removeTapGesture];
-        [self viewDidLoad];
+        [self performSelector:@selector(viewDidLoad) withObject:nil afterDelay:1.0];
     }
 }
 
