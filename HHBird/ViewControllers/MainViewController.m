@@ -11,9 +11,10 @@
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define width_of_pipe 60.0f
 #define height_of_pipe 450.0f
-#define space 130.0f
+#define space 180.0f
 #define deltaX 1.0f
 #define width_of_bird birdRect.size.width
+#define height_space 130.0f
 
 @interface MainViewController ()
 {
@@ -58,33 +59,33 @@
     
     CGRect bottom1Rect = _bottom1.frame;
     bottom1Rect.origin.x = SCREEN_WIDTH;
-    bottom1Rect.origin.y = arc4random()%300 + 100;
+    bottom1Rect.origin.y = arc4random()%300 + height_space;
     [_bottom1 setFrame:bottom1Rect];
     
     CGRect bottom2Rect = _bottom2.frame;
     bottom2Rect.origin.x = SCREEN_WIDTH + width_of_pipe + space;
-    bottom2Rect.origin.y = arc4random()%300 + 100;
+    bottom2Rect.origin.y = arc4random()%300 + height_space;
     [_bottom2 setFrame:bottom2Rect];
     
     CGRect bottom3Rect = _bottom3.frame;
     bottom3Rect.origin.x = SCREEN_WIDTH + width_of_pipe + space + width_of_pipe + space;
-    bottom3Rect.origin.y = arc4random()%300 + 100;
+    bottom3Rect.origin.y = arc4random()%300 + height_space;
     [_bottom3 setFrame:bottom3Rect];
 
     
     CGRect top1Rect = _top1.frame;
     top1Rect.origin.x = SCREEN_WIDTH;
-    top1Rect.origin.y = bottom1Rect.origin.y - 100 - height_of_pipe;
+    top1Rect.origin.y = bottom1Rect.origin.y - height_space - height_of_pipe;
     [_top1 setFrame:top1Rect];
     
     CGRect top2Rect = _top2.frame;
     top2Rect.origin.x = SCREEN_WIDTH + width_of_pipe + space;
-    top2Rect.origin.y = bottom2Rect.origin.y - 100 - height_of_pipe;
+    top2Rect.origin.y = bottom2Rect.origin.y - height_space - height_of_pipe;
     [_top2 setFrame:top2Rect];
     
     CGRect top3Rect = _top3.frame;
     top3Rect.origin.x = SCREEN_WIDTH + width_of_pipe + space + width_of_pipe + space;
-    top3Rect.origin.y = bottom3Rect.origin.y - 100 - height_of_pipe;
+    top3Rect.origin.y = bottom3Rect.origin.y - height_space - height_of_pipe;
     [_top3 setFrame:top3Rect];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -118,7 +119,7 @@
 -(void)startTimer
 {
     if (!myTimer) {
-        myTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
+        myTimer = [NSTimer scheduledTimerWithTimeInterval:0.009
                                                    target:self
                                                  selector:@selector(movePipe)
                                                  userInfo:nil
@@ -147,7 +148,7 @@
 {
     //bird move
     CGRect birdRect = _bird.frame;
-    birdRect.origin.y += 1.5;
+    birdRect.origin.y += 1.1;
     [_bird setFrame:birdRect];
     
     //BOTTOM
@@ -178,37 +179,37 @@
     
     if (bottom1Rect.origin.x == -width_of_pipe) {
         bottom1Rect.origin.x = bottom3Rect.origin.x + width_of_pipe + space;
-        bottom1Rect.origin.y = arc4random()%300 + 100;
+        bottom1Rect.origin.y = arc4random()%300 + height_space;
         [_bottom1 setFrame:bottom1Rect];
     }
     
     if (bottom2Rect.origin.x == -width_of_pipe) {
         bottom2Rect.origin.x = bottom1Rect.origin.x + width_of_pipe + space;
-        bottom2Rect.origin.y = arc4random()%300 + 100;
+        bottom2Rect.origin.y = arc4random()%300 + height_space;
         [_bottom2 setFrame:bottom2Rect];
     }
     
     if (bottom3Rect.origin.x == -width_of_pipe) {
         bottom3Rect.origin.x = bottom2Rect.origin.x + width_of_pipe + space;
-        bottom3Rect.origin.y = arc4random()%300 + 100;
+        bottom3Rect.origin.y = arc4random()%300 + height_space;
         [_bottom3 setFrame:bottom3Rect];
     }
     
     if (top1Rect.origin.x == -width_of_pipe) {
         top1Rect.origin.x = top3Rect.origin.x + width_of_pipe + space;
-        top1Rect.origin.y = bottom1Rect.origin.y - 100 - height_of_pipe;
+        top1Rect.origin.y = bottom1Rect.origin.y - height_space - height_of_pipe;
         [_top1 setFrame:top1Rect];
     }
     
     if (top2Rect.origin.x == -width_of_pipe) {
         top2Rect.origin.x = top1Rect.origin.x + width_of_pipe + space;
-        top2Rect.origin.y = bottom2Rect.origin.y - 100 - height_of_pipe;
+        top2Rect.origin.y = bottom2Rect.origin.y - height_space - height_of_pipe;
         [_top2 setFrame:top2Rect];
     }
     
     if (top3Rect.origin.x == -width_of_pipe) {
         top3Rect.origin.x = top2Rect.origin.x + width_of_pipe + space;
-        top3Rect.origin.y = bottom3Rect.origin.y - 100 - height_of_pipe;
+        top3Rect.origin.y = bottom3Rect.origin.y - height_space - height_of_pipe;
         [_top3 setFrame:top3Rect];
     }
     
@@ -228,47 +229,47 @@
         [self viewDidLoad];
     }
     
-//    if (CGRectIntersectsRect(top1Rect, birdRect)) {
-//        DLog(@"bird_top1");
-//        [self stopTimer];
-//        [self removeTapGesture];
-//        [self viewDidLoad];
-//    }
-//    
-//    if (CGRectIntersectsRect(top2Rect, birdRect)) {
-//        DLog(@"bird_top2");
-//        [self stopTimer];
-//        [self removeTapGesture];
-//        [self viewDidLoad];
-//    }
-//    
-//    if (CGRectIntersectsRect(top3Rect, birdRect)) {
-//        DLog(@"bird_top3");
-//        [self stopTimer];
-//        [self removeTapGesture];
-//        [self viewDidLoad];
-//    }
-//    
-//    if (CGRectIntersectsRect(bottom1Rect, birdRect)) {
-//        DLog(@"bird_bottom1");
-//        [self stopTimer];
-//        [self removeTapGesture];
-//        [self viewDidLoad];
-//    }
-//    
-//    if (CGRectIntersectsRect(bottom2Rect, birdRect)) {
-//        DLog(@"bird_bottom2");
-//        [self stopTimer];
-//        [self removeTapGesture];
-//        [self viewDidLoad];
-//    }
-//    
-//    if (CGRectIntersectsRect(bottom3Rect, birdRect)) {
-//        DLog(@"bird_bottom3");
-//        [self stopTimer];
-//        [self removeTapGesture];
-//        [self viewDidLoad];
-//    }
+    if (CGRectIntersectsRect(_top1.frame, _bird.frame)) {
+        DLog(@"bird_top1");
+        [self stopTimer];
+        [self removeTapGesture];
+        [self viewDidLoad];
+    }
+    
+    if (CGRectIntersectsRect(_top2.frame,  _bird.frame)) {
+        DLog(@"bird_top2");
+        [self stopTimer];
+        [self removeTapGesture];
+        [self viewDidLoad];
+    }
+    
+    if (CGRectIntersectsRect(_top3.frame,  _bird.frame)) {
+        DLog(@"bird_top3");
+        [self stopTimer];
+        [self removeTapGesture];
+        [self viewDidLoad];
+    }
+    
+    if (CGRectIntersectsRect(_bottom1.frame,  _bird.frame)) {
+        DLog(@"bird_bottom1");
+        [self stopTimer];
+        [self removeTapGesture];
+        [self viewDidLoad];
+    }
+    
+    if (CGRectIntersectsRect(_bottom2.frame,  _bird.frame)) {
+        DLog(@"bird_bottom2");
+        [self stopTimer];
+        [self removeTapGesture];
+        [self viewDidLoad];
+    }
+    
+    if (CGRectIntersectsRect(_bottom3.frame,  _bird.frame)) {
+        DLog(@"bird_bottom3");
+        [self stopTimer];
+        [self removeTapGesture];
+        [self viewDidLoad];
+    }
 }
 
 -(void)screenTapped
