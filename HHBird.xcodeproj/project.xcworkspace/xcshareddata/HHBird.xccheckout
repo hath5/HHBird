@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>409FD1C5-3301-441C-9E87-22F77EDCBD05</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HHBird</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>69589098-7EC5-4C5B-911D-2BDABFCDF55E</key>
+		<string>https://github.com/hath5/HHBird.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HHBird.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>69589098-7EC5-4C5B-911D-2BDABFCDF55E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hath5/HHBird.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>69589098-7EC5-4C5B-911D-2BDABFCDF55E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>69589098-7EC5-4C5B-911D-2BDABFCDF55E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HHBird</string>
+		</dict>
+	</array>
+</dict>
+</plist>

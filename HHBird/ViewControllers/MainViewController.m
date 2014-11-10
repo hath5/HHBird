@@ -54,7 +54,7 @@
     [_btnPlay setHidden:NO];
     
     //reset game
-    [_bird setFrame:CGRectMake(32, 259, 50, 29)];
+    [_bird setFrame:CGRectMake(32, 259, 50, 25)];
     
     CGRect bottom1Rect = _bottom1.frame;
     bottom1Rect.origin.x = SCREEN_WIDTH;
@@ -211,6 +211,64 @@
         top3Rect.origin.y = bottom3Rect.origin.y - 100 - height_of_pipe;
         [_top3 setFrame:top3Rect];
     }
+    
+    //When bird hit bottom
+    if (birdRect.origin.y + birdRect.size.height >= _bottomView.frame.origin.y) {
+        DLog(@"game over");
+        [self stopTimer];
+        [self removeTapGesture];
+        [self viewDidLoad];
+    }
+    
+    //When bird hit top
+    if (birdRect.origin.y <= -20) {
+        DLog(@"game over");
+        [self stopTimer];
+        [self removeTapGesture];
+        [self viewDidLoad];
+    }
+    
+//    if (CGRectIntersectsRect(top1Rect, birdRect)) {
+//        DLog(@"bird_top1");
+//        [self stopTimer];
+//        [self removeTapGesture];
+//        [self viewDidLoad];
+//    }
+//    
+//    if (CGRectIntersectsRect(top2Rect, birdRect)) {
+//        DLog(@"bird_top2");
+//        [self stopTimer];
+//        [self removeTapGesture];
+//        [self viewDidLoad];
+//    }
+//    
+//    if (CGRectIntersectsRect(top3Rect, birdRect)) {
+//        DLog(@"bird_top3");
+//        [self stopTimer];
+//        [self removeTapGesture];
+//        [self viewDidLoad];
+//    }
+//    
+//    if (CGRectIntersectsRect(bottom1Rect, birdRect)) {
+//        DLog(@"bird_bottom1");
+//        [self stopTimer];
+//        [self removeTapGesture];
+//        [self viewDidLoad];
+//    }
+//    
+//    if (CGRectIntersectsRect(bottom2Rect, birdRect)) {
+//        DLog(@"bird_bottom2");
+//        [self stopTimer];
+//        [self removeTapGesture];
+//        [self viewDidLoad];
+//    }
+//    
+//    if (CGRectIntersectsRect(bottom3Rect, birdRect)) {
+//        DLog(@"bird_bottom3");
+//        [self stopTimer];
+//        [self removeTapGesture];
+//        [self viewDidLoad];
+//    }
 }
 
 -(void)screenTapped
@@ -221,7 +279,6 @@
     [UIView animateWithDuration:0.2 animations:^{
         birdRect.origin.y -= 70;
         [_bird setFrame:birdRect];
-
     }];
 }
 
